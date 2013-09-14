@@ -1,0 +1,12 @@
+#!/bin/bash
+# -*- sh -*-
+
+set -e
+. etc/env
+
+exec sudo docker run \
+	-e EXIM_SMARTHOST=$EXIM_SMARTHOST \
+	finkregh/exim4-light:latest
+
+# map docker-directory to local directory?
+	#-v $(pwd)/data/exim:/

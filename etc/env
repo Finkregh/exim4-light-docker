@@ -1,0 +1,17 @@
+#!/bin/bash
+# -*- sh -*-
+
+# To override the environment variables here, add them to .env.
+
+# IP address of current host.
+export HOSTIP=$(/sbin/ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}')
+
+# smarthost will be set to the local hosts' IP
+# exim will pass all emails to the "root"-host which runs docker
+export EXIM_SMARTHOST=$HOSTIP
+
+
+# Overrides.
+if [ -e .env ]; then
+    source .env
+fi

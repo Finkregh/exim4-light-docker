@@ -1,0 +1,91 @@
+Name: exim4/dc_eximconfig_configtype
+Template: exim4/dc_eximconfig_configtype
+Value: mail sent by smarthost; received via SMTP or fetchmail
+Owners: exim4-config
+Flags: seen
+
+Name: exim4/dc_local_interfaces
+Template: exim4/dc_local_interfaces
+Value: 
+Owners: exim4-config
+Flags: seen
+
+Name: exim4/dc_localdelivery
+Template: exim4/dc_localdelivery
+Value: Maildir format in home directory
+Owners: exim4-config
+Flags: seen
+
+Name: exim4/dc_minimaldns
+Template: exim4/dc_minimaldns
+Value: false
+Owners: exim4-config
+Flags: seen
+
+Name: exim4/dc_other_hostnames
+Template: exim4/dc_other_hostnames
+Value: 
+Owners: exim4-config
+Flags: mailname, seen
+Variables:
+ fqdn = ubuntu-test
+
+Name: exim4/dc_postmaster
+Template: exim4/dc_postmaster
+Value: finkregh
+Owners: exim4-config
+
+Name: exim4/dc_readhost
+Template: exim4/dc_readhost
+Value: 
+Owners: exim4-config
+
+Name: exim4/dc_relay_domains
+Template: exim4/dc_relay_domains
+Value: 
+Owners: exim4-config
+
+Name: exim4/dc_relay_nets
+Template: exim4/dc_relay_nets
+Value: 172.16.0.0/12; 10.0.0.0/8; 192.168.0.0/16
+Owners: exim4-config
+Flags: seen
+
+Name: exim4/dc_smarthost
+Template: exim4/dc_smarthost
+Value: $SMARTHOST
+Owners: exim4-config
+Flags: seen
+
+Name: exim4/exim4-config-title
+Template: exim4/exim4-config-title
+Owners: exim4-config
+
+Name: exim4/hide_mailname
+Template: exim4/hide_mailname
+Value: false
+Owners: exim4-config
+Flags: seen
+Variables:
+ dc_other_hostnames = 
+ mailname = docker-exim4
+
+Name: exim4/mailname
+Template: exim4/mailname
+Value: docker-exim4
+Owners: exim4-config
+Flags: seen
+
+Name: exim4/no_config
+Template: exim4/no_config
+Owners: exim4-config
+
+Name: exim4/purge_spool
+Template: exim4/purge_spool
+Owners: exim4-base
+
+Name: exim4/use_split_config
+Template: exim4/use_split_config
+Value: true
+Owners: exim4-config
+Flags: seen

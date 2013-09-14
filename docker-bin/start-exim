@@ -1,0 +1,12 @@
+#!/bin/bash
+# -*- sh -*-
+
+set -e
+set -x
+
+sed -i s/\$SMARTHOST/$EXIM_SMARTHOST/ /etc/exim4/update-exim4.conf.conf
+
+update-exim4.conf
+
+#exec su Debian-exim -c "/usr/sbin/exim4 -v -bdf -q30m"
+exec /usr/sbin/exim4 -v -bdf -q30m
